@@ -7,16 +7,16 @@ const Form = (props) => {
     event.preventDefault();
     let objReturn = {
       isOpen: true,
-      title: "Некорректный ввод",
-      message: "Эти поля не могут быть пустыми",
+      title: "Invalid input",
+      message: "These fields cannot be empty",
     };
     if (event.target.name.value === "" || event.target.age.value === "") {
       onCheck(objReturn);
     } else if (event.target.age.value < 0) {
       objReturn = {
         isOpen: true,
-        title: "Некорректный возраст",
-        message: "Возраст должен быть больше 0",
+        title: "Invalid age",
+        message: "Age must be greater than 0",
       };
       onCheck(objReturn);
     } else {
@@ -33,17 +33,17 @@ const Form = (props) => {
     <form className={styles.form} onSubmit={handleSubmit}>
       <input
         type="text"
-        placeholder="введите имя"
+        placeholder="name"
         className={styles.input}
         id="name"
       />
       <input
         type="number"
-        placeholder="введите возраст"
+        placeholder="age"
         className={styles.input}
         id="age"
       />
-      <button className={styles.button}>Сохранить</button>
+      <button className={styles.button}>Save</button>
     </form>
   );
 };

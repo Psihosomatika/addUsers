@@ -7,8 +7,8 @@ function App() {
   const [users, setUsers] = useState([]);
   const [modalOpen, setModalOpen] = useState({
     isOpen: false,
-    title: "Некорректный ввод",
-    message: "Эти поля не могут быть пустыми",
+    title: "Invalid input",
+    message: "These fields cannot be empty",
   });
   const handleSave = (obj) => {
     setUsers((users) => [...users, obj]);
