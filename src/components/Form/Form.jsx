@@ -3,6 +3,9 @@ import { v4 as uuidv4 } from "uuid";
 
 const Form = (props) => {
   const { onSave, onCheck } = props;
+  // const onSave = props.onSave;
+  // const red = props.red;
+
   const handleSubmit = (event) => {
     event.preventDefault();
     let objReturn = {
@@ -18,6 +21,7 @@ const Form = (props) => {
         title: "Invalid age",
         message: "Age must be greater than 0",
       };
+
       onCheck(objReturn);
     } else {
       const name = event.target.name.value;

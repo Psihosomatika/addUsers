@@ -3,6 +3,7 @@ import "./App.css";
 import Form from "./components/Form/Form.jsx";
 import UsersList from "./components/UsersList/UsersList.jsx";
 import Modal from "./components/Modal/Modal.jsx";
+
 function App() {
   const [users, setUsers] = useState([]);
   const [modalOpen, setModalOpen] = useState({
@@ -17,7 +18,6 @@ function App() {
   const handleOpenModal = (isOpen) => {
     setModalOpen((modalOpen) => ({ ...modalOpen, ...isOpen }));
   };
-  console.log(users);
   return (
     <div className="app">
       {modalOpen.isOpen ? (

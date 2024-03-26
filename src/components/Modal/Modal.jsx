@@ -1,6 +1,8 @@
 import styles from "./Modal.module.css";
+import React from "react";
+import ReactDOM from "react-dom";
 
-const Modal = (props) => {
+const BodyModal = (props) => {
   const { message, title, onCheck } = props;
   const handleClick = () => {
     onCheck({
@@ -21,6 +23,17 @@ const Modal = (props) => {
         </div>
       </div>
     </div>
+  );
+};
+
+const Modal = (props) => {
+  return (
+    <React.Fragment>
+      {ReactDOM.createPortal(
+        <BodyModal {...props} />,
+        document.getElementById("modal")
+      )}
+    </React.Fragment>
   );
 };
 
